@@ -1,0 +1,14 @@
+version: "3"
+
+# services are like containers that we want to run
+services:
+  # first service
+  redis-server:
+    image: "redis"
+  # second service
+  node-app:
+    # look for docker file in working directory and get image of that
+    build: .
+    # this is port mapping for this project
+    ports:
+      - "8080:8080"
